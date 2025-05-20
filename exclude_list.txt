@@ -1,0 +1,11 @@
+.gradio/*
+api/assessment/
+./api/models/__pycache__/*
+api/models/*.pth
+api/models/*.pt
+api/*.ipynb
+api/assessment.py
+api/Test_assessment_web.py
+api/Test_predictor.py
+./py/*
+./.git/*
