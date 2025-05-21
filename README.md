@@ -38,7 +38,7 @@ docker start gr_app01
 コンテナ名(gr_app01)は任意
 
 ## 実行手順
-Dockerコンテナを起動した状態で，実行サーバの7860ポートにアクセスするとアプリケーションを立ち上げることができます。
+Dockerコンテナを起動した状態で、実行サーバの7860ポートにアクセスするとアプリケーションを立ち上げることができます。
 ```bash
 localhost:7860
 ```
@@ -48,5 +48,8 @@ localhost:7860
 ```
 
 ## 動作確認
+アクセスすると、以下のような画面が表示されます。
+![Image](https://github.com/user-attachments/assets/99867839-8616-43e8-8e5a-f0ae63c878a1)
 
-
+メロンの画像をアップロードすると、網目密度、分岐点数、検出位置、網目推定結果が出力されます。
+![Image](https://github.com/user-attachments/assets/73c5bdd2-ef0f-4f78-a982-ec1682b841b5)
