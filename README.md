@@ -16,7 +16,7 @@ minelab-shareから次のファイルをダウンロードしてください。
 
    ファイルを以下のように配置してください。
   
-![Image](https://github.com/user-attachments/assets/eca837a3-1c48-4ca3-a595-577ae6d2d93f)
+![Image](https://github.com/user-attachments/assets/b2ef1816-cd98-417b-a3a5-12e49383582e)
 
 2. Dockerの環境構築
    
