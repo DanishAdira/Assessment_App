@@ -49,6 +49,11 @@ localhost:7860
 [ip address]:7860
 ```
 
+実行終了時は以下のコマンドを入力します。
+```bash
+docker stop gr_app01
+```
+
 ## 動作確認
 アクセスすると、以下のような画面が表示されます。
 ![Image](https://github.com/user-attachments/assets/99867839-8616-43e8-8e5a-f0ae63c878a1)
