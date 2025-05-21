@@ -14,7 +14,7 @@ minelab-shareから次のファイルをダウンロードしてください。
 
    ファイルを以下のように配置してください。
   
-![Image](https://github.com/user-attachments/assets/8bff64cf-49ee-419e-9dc0-8f2a2ca01a9d)
+![Image](https://github.com/user-attachments/assets/eca837a3-1c48-4ca3-a595-577ae6d2d93f)
 
 2. Dockerの環境構築
    
@@ -27,9 +27,26 @@ docker build -t gr_app .
 
 Dockerのコンテナを起動します。
 
+- 初回
 ```bash
 docker run -p 7860:7860 --name gr_app01 gr_app
 ```
+- 2回目以降
+```bash
+docker start gr_app01 
+```
 コンテナ名(gr_app01)は任意
+
+## 実行手順
+Dockerコンテナを起動した状態で，実行サーバの7860ポートにアクセスするとアプリケーションを立ち上げることができます。
+```bash
+localhost:7860
+```
+もしくは
+```bash
+[ip address]:7860
+```
+
+## 動作確認
 
 
