@@ -2,6 +2,8 @@
 
 ## 全体のシステム構成図
 
+![Image](https://github.com/user-attachments/assets/bf01643b-0e97-47aa-a906-4619bc1b454b)
+
 ## 実行準備
 
 1. 網目検出モデル，メロン検出モデルのインストール
