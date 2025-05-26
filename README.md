@@ -55,3 +55,11 @@ localhost:7860
 
 メロンの画像をアップロードすると、網目密度、分岐点数、検出位置、網目推定結果が出力されます。
 ![Image](https://github.com/user-attachments/assets/73c5bdd2-ef0f-4f78-a982-ec1682b841b5)
+
+## 終了方法
+
+Dockerのコンテナを停止します。
+
+```bash
+docker stop gr_app01
+```
