@@ -17,6 +17,7 @@ from scipy.spatial import KDTree
 from skimage.draw import line
 import pyheif
 from sklearn.cluster import DBSCAN
+from datetime import datetime
 
 # パス設定（Docker使用時は要修正）
 sys.path.append('/app/api/models')
@@ -38,7 +39,7 @@ def get_augmentation_validation():
         ToTensorV2()
     ], is_check_shapes=False)
 
-# モデルのロード
+# ローカルでモデルをロード
 yolo_path = "/app/api/models/yolo-seg.pt"           # yoloモデルのパス設定
 unet_path = "/app/api/models/best_model.pth"        # UNetモデルのパス設定
 
@@ -126,6 +127,16 @@ def make_center_box(trim_image):
 def make_mask(uploaded_file_path):
     image_file = load_image(uploaded_file_path)     # 画像の読み込み
 
+    # ローカル環境に入力した画像を保存
+    save_dir = "/app/output"        # 保存先ディレクトリ    docker使用時は要修正
+    os.makedirs(save_dir, exist_ok=True)            # ディレクトリが存在しない場合は作成
+    
+    now = datetime.now()
+    timestamp = now.strftime("%Y%m%d_%H%M%S")         # タイムスタンプの生成
+    filename = f"App_{timestamp}.jpg"
+    input_image = os.path.join(save_dir, filename)  # 保存するファイルのパス
+    image_file.save(input_image)  # 一時的に保存
+
     image = np.array(image_file.convert("RGB"))     # 入力画像をRGBに変換してnumpy配列に
 
     result = get_melon_model(image)[0]              # YOLOでメロン検出
@@ -170,7 +181,7 @@ interface = gr.Interface(
         gr.Image(type="pil", label="検出位置"),
         gr.Image(type="pil", label="網目推定画像")
     ],
-    title="品質評価アプリケーション",
+    title="品質評価アプリケーション ver.1.0",
     description="メロンの画像から網目を検出します．\n網目密度を計算し，結果を表示します．",
 )
 # エントリーポイント

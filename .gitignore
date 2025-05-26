@@ -8,3 +8,4 @@ api/assessment.py
 api/Test_assessment_web.py
 api/Test_predictor.py
 py/
+memo.txt
